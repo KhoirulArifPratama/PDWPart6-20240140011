@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Pirata+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <header class="bounty-panel title-header">
+            <h1 class="pirate-text">One Piece</h1>
+            <p>★ Wanted / Bounty Edition ★</p>
+        </header>
+
+        <div class="content-wrapper">
+            <section class="bounty-panel">
+                <h2>[ Berita Morgan ]</h2>
+                <hr class="pirate-line">
+                <div class="image-container">
+                    <picture>
+                        <source media="(max-width: 600px)"
+                            srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJSUDhLaxQn-52J8QnAFic4cp5KfUY1zmDsA&s=">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJSUDhLaxQn-52J8QnAFic4cp5KfUY1zmDsA&s="
+                            alt="One Piece Visual" class="wanted-img">
+                    </picture>
+                </div>
+                <button class="pirate-btn" onclick="peringatan3()">BACA INFO</button>
+            </section>
+
+            <section class="bounty-panel">
+                <h2>[ worst 3 generations visual ]</h2>
+                <hr class="pirate-line">
+                <div class="video-container">
+                    <div class="main-video-wrapper">
+                        <video id="mainVideo" loop autoplay muted preload="auto" class="main-video">
+                            <source src="SongVideo/ssstik.io_@straw.amvs_1775827519343.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="playlist grid-4">
+                        <video onclick="gantiVideo(this)" loop autoplay muted preload="auto" class="playlist-video">
+                            <source src="SongVideo/ssstik.io_@goldarr_1775824158625.mp4" type="video/mp4">
+                        </video>
+
+                        <video onclick="gantiVideo(this)" loop autoplay muted preload="auto" class="playlist-video">
+                            <source src="SongVideo/ssstik.io_@lukarkawaii_1775824693634.mp4" type="video/mp4">
+                        </video>
+
+                        <video onclick="gantiVideo(this)" loop autoplay muted preload="auto" class="playlist-video">
+                            <source src="SongVideo/ssstik.io_@one_eyzo_1775825276783.mp4" type="video/mp4">
+                        </video>
+
+                        <video onclick="gantiVideo(this)" loop autoplay muted preload="auto" class="playlist-video">
+                            <source src="SongVideo/ssstik.io_@wrathofqv_1775825539033.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <button class="pirate-btn" onclick="peringatan1()">INFO SIARAN</button>
+            </section>
+
+            <section class="bounty-panel">
+                <h2 id="judulAudio">[ One piece opening song ]</h2>
+                <hr class="pirate-line">
+
+                <div class="music-player">
+                    <div class="image-wrapper">
+                        <img src="SongVideo/download (12).jpg" class="bg-img" alt="Audio Background">
+                    </div>
+
+                    <div class="player-bar">
+                        <h3>Rock Manila, PH </h3>
+                        <p>We Are!</p>
+
+                        <audio id="audio">
+                            <source src="SongVideo/one-piece_opening-1-we-are.mp3" type="audio/mpeg">
+                        </audio>
+
+                        <div class="controls">
+                            <button id="playBtn" class="wood-play">▶</button>
+                            <span id="currentTime" class="time-text">0:00</span>
+                            <input type="range" id="progress" value="0" max="100">
+                            <span id="duration" class="time-text">0:00</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="pirate-btn" onclick="peringatan2()">INFO LAGU</button>
+            </section>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

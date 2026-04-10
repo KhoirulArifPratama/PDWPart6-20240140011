@@ -1,0 +1,254 @@
+/* ===== GLOBAL STYLE ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Macondo', cursive;
+    /* Background laut dipadu dengan overlay gelap */
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)),
+        url('SongVideo/ocean scenery.jpg') center/cover fixed;
+    color: #3e2723;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1.pirate-text {
+    font-family: 'Pirata One', cursive;
+    color: #8b0000;
+    /* Merah gelap */
+    text-shadow: 2px 2px 0px #ffd700, 4px 4px 5px rgba(0, 0, 0, 0.5);
+    /* Outline emas */
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-family: 'Pirata One', cursive;
+    color: #4e342e;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.pirate-line {
+    border: none;
+    height: 3px;
+    background: #8b4513;
+    /* Warna kayu/coklat tua */
+    margin: 15px auto;
+    width: 80%;
+    border-radius: 50%;
+}
+
+/* ===== LAYOUT & BOUNTY PANELS ===== */
+.main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.bounty-panel {
+    /* Tekstur kertas buronan (Wanted Poster) */
+    background-color: #f4e4bc;
+    background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+    border: 4px solid #5d4037;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(139, 69, 19, 0.3);
+    position: relative;
+}
+
+.title-header {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-width: 6px;
+    border-style: double;
+}
+
+/* ===== BUTTONS ===== */
+.pirate-btn {
+    font-family: 'Macondo', cursive;
+    background: #8b0000;
+    color: #f4e4bc;
+    border: 2px solid #5d4037;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.2s ease;
+    box-shadow: 3px 3px 0px #5d4037;
+}
+
+.pirate-btn:hover {
+    background: #b71c1c;
+    transform: translateY(2px) translateX(2px);
+    box-shadow: 1px 1px 0px #5d4037;
+}
+
+/* ===== IMAGES & VIDEO ===== */
+.wanted-img {
+    max-width: 100%;
+    height: auto;
+    border: 4px solid #3e2723;
+    border-radius: 4px;
+    filter: sepia(0.3) contrast(1.1);
+    /* Efek agak jadul */
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.main-video {
+    width: 100%;
+    max-width: 600px;
+    border: 4px solid #3e2723;
+    border-radius: 4px;
+    background: #000;
+    pointer-events: none;
+}
+
+.main-video::-webkit-media-controls {
+    display: none !important;
+}
+
+/* GRID 4 KOTAK UNTUK PLAYLIST */
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Membuat formasi 2 baris 2 kolom (4 kotak) */
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.playlist-video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    /* Memaksa proporsi kotak tetap rapi */
+    object-fit: cover;
+    border: 3px solid #8b4513;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    filter: grayscale(40%) sepia(20%);
+}
+
+.playlist-video:hover {
+    border-color: #8b0000;
+    filter: grayscale(0%) sepia(0%);
+    transform: scale(1.05) rotate(-2deg);
+    /* Efek miring ala kertas ditempel */
+    z-index: 2;
+}
+
+/* ===== AUDIO PLAYER ===== */
+.music-player {
+    width: 100%;
+    max-width: 450px;
+    height: 250px;
+    margin: 15px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid #3e2723;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) sepia(0.4);
+}
+
+.player-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(93, 64, 55, 0.9);
+    /* Coklat transparan */
+    border-top: 2px solid #f4e4bc;
+    text-align: center;
+    color: #f4e4bc;
+}
+
+.player-bar h3 {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.player-bar p {
+    font-size: 14px;
+    color: #ffcc80;
+    /* Warna jingga/emas */
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.wood-play {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #f4e4bc;
+    background: #8b0000;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.wood-play:hover {
+    background: #b71c1c;
+    transform: scale(1.1);
+}
+
+.time-text {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    min-width: 40px;
+}
+
+#progress {
+    flex: 1;
+    height: 6px;
+    appearance: none;
+    background: rgba(244, 228, 188, 0.3);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+#progress::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #ffd700;
+    /* Emas bajak laut */
+    border: 2px solid #8b0000;
+    border-radius: 50%;
+}
